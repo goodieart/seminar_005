@@ -1,29 +1,15 @@
-﻿using static System.Console;
+﻿using Lib;
+using static System.Console;
 
-int[] array = ArrayCreate(5);
-ArrayPrint(array);
-Write(ArrayMinMaxDelta(array));
+Write("Введите размер массива: ");
+int arraySize = int.Parse(ReadLine()!);
 
-int[] ArrayCreate(int size)
+if(arraySize < 1)
 {
-    int[] result = new int[size];
-    Random rnd = new Random();
-    for(int i = 0; i < result.Length; i++) result[i] = rnd.Next(0, 100);
-    return result;
+    WriteLine("Неверно задан размер массива!");
+    return;
 }
 
-void ArrayPrint(int[] array)
-{
-    WriteLine($"[{string.Join(",", array)}]");
-}
-
-int ArrayMinMaxDelta(int[] array)
-{
-    int min = array[0], max = array[0]; 
-    foreach(int i in array) 
-    {
-        if(i > max) max = i;
-        if(i < min) min = i;
-    }
-    return max - min;
-}
+int[] myArray = Arrays.CreateRandomArray(arraySize, 0, 100);
+Arrays.PrintArray(myArray);
+WriteLine($"Разница между min и max = {Arrays.ArrayMinMaxDelta(myArray)}");
