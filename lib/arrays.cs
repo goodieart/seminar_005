@@ -16,4 +16,14 @@ public class Arrays
     {
         Console.WriteLine($"[{string.Join(",", array)}]");
     }
+
+    public static int ArrayEvenCount(int[] array)
+    {
+        int result = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] % 2 == 0) result++;
+        }
+        return result;
+    }
 }
