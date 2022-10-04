@@ -26,4 +26,11 @@ public class Arrays
         }
         return result;
     }
+
+    public static int ArrayModSum(int[] array)
+    {
+        int result = 0;
+        for (int i = 1; i < array.Length; i += 2) result += array[i];
+        return result;
+    }
 }
