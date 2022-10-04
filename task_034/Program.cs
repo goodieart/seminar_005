@@ -6,7 +6,7 @@ using static System.Console;
 
 int[] array = ArrayCreate(6);
 ArrayPrint(array);
-Write(ArrayEvenCount(array));
+WriteLine(ArrayEvenCount(array));
 
 int[] ArrayCreate(int size)
 {
